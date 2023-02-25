@@ -1,0 +1,84 @@
+body {
+    margin: 0px;
+    overflow: hidden;
+}
+
+main {
+    text-align: center;
+    border: 2px black solid;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #010326;
+    font-family: arial;
+}
+
+h1 {
+    color: #EAF205;
+    font-size: 80px;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 10px;
+}
+
+.btn {
+    width: 150px;
+    margin: 20px;
+    all: unset;
+    border: 1px white solid;
+    font-weight: bold;
+    padding: 15px;
+    width: 300px;
+    margin: 17px;
+    border-radius: 5px;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+#multiplayer-btn {
+    color: grey;
+    border-color: grey;
+}
+
+/* Media queries for different screen sizes */
+
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    .btn {
+        width: 200px;
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    h1 {
+        font-size: 60px;
+    }
+
+    .btn {
+        width: 250px;
+        font-size: 30px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    h1 {
+        font-size: 80px;
+    }
+
+    .btn {
+        width: 300px;
+        font-size: 35px;
+    }
+}
