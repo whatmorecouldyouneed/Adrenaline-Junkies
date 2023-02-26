@@ -20,7 +20,8 @@ h1 {
     font-size: 80px;
 }
 
-.button-group {
+.button-group, 
+form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,7 +30,8 @@ h1 {
     margin: 10px;
 }
 
-.btn {
+.btn,
+input[type="text"] {
     width: 150px;
     margin: 20px;
     all: unset;
@@ -42,6 +44,7 @@ h1 {
     font-size: 35px;
     cursor: pointer;
 }
+
 
 #multiplayer-btn {
     color: grey;
