@@ -12,7 +12,6 @@ main {
     justify-content: center;
     align-items: center;
     background-color: #010326;
-    font-family: arial;
 }
 
 h1 {
@@ -35,11 +34,11 @@ h1 {
     all: unset;
     border: 1px white solid;
     font-weight: bold;
-    padding: 15px;
+    padding: 18px !important;
     width: 300px;
     margin: 17px;
     border-radius: 5px;
-    font-size: 35px;
+    font-size: 28px !important;
     cursor: pointer;
 }
 
