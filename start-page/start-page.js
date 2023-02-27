@@ -30,9 +30,3 @@ startGameBtn.addEventListener('click', function() {
   buttonGroup.parentNode.replaceChild(form, buttonGroup);
 });
 
-// Prevent the form from refreshing the page on submit
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  playerName = input.value;
-  window.location.href = "./lore-pages/lore.html";
-});

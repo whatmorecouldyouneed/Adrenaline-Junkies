@@ -1,115 +1,63 @@
-body {
-    margin: 0;
-    overflow: hidden;
+#instructions {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: Press_Start_2p;
+    font-size: 18px;
     text-align: center;
-    border: 2px solid black;
-    height: 100vh;
+    max-width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+    line-height: 42.5px;
+  }
+  #how-to {
+    color: #EAF205;
+    font-size: 35px;
+  }
+
+  .button-group {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #010326;
-    font-family: Arial, sans-serif;
-}
-
-main {
-    margin-top: 20px;
     color: white;
+    margin: 10px;
 }
 
-h1 {
-    font-size: 5vw;
-    color: #EAF205;
-    margin: 0;
-}
-
-p {
-    font-size: 2.5vw;
-    padding: 50px;
-    line-height: 2.2em;
-    margin: 0;
-}
-
-span img {
-    vertical-align: middle;
-    margin-right: 5px;
-}
-
-img {
-    width: 10vw;
-}
-
-#play-btn {
+.btn {
+    width: 150px;
+    margin: 20px;
     all: unset;
     border: 1px white solid;
     font-weight: bold;
-    padding: 15px;
+    padding: 18px !important;
     width: 300px;
     margin: 17px;
     border-radius: 5px;
-    font-size: 35px;
+    font-size: 28px !important;
     cursor: pointer;
 }
-  
-@media (max-width: 767px) {
-    h1 {
-        font-size: 3.5vw;
-    }
 
-    p {
-        font-size: 2vw;
-        padding: 30px;
-    }
-
-    img {
-        width: 8vw;
-    }
-
-    #play-btn {
-        width: 200px;
-        margin: 10px;
-        font-size: 1.5rem;
-    }
+span img {
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-    h1 {
-        font-size: 3rem;
-    }
-
-    p {
-        font-size: 1.5rem;
-        padding: 4rem;
-    }
-
-    img {
-        width: 100px;
-    }
-
-    #play-btn {
-        width: 150px;
-        margin: 20px;
-        font-size: 1.2rem;
-    }
+img {
+  width: 8.5vw;
+  height: 8vh;
 }
 
-@media (min-width: 1024px) {
-    h1 {
-        font-size: 5rem;
-    }
-
-    p {
-        font-size: 2rem;
-        padding: 5rem;
-    }
-
-    img {
-        width: 100px;
-    }
-
-    #play-btn {
-        width: 200px;
-        margin: 30px;
-        font-size: 2rem;
-    }
-}  
+#play-btn {
+  all: unset;
+  border: 1px white solid;
+  font-weight: bold;
+  padding: 15px;
+  width: 300px;
+  margin: 17px;
+  border-radius: 5px;
+  font-size: 35px;
+  cursor: pointer;
+}

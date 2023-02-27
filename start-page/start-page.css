@@ -12,7 +12,6 @@ main {
     justify-content: center;
     align-items: center;
     background-color: #010326;
-    font-family: arial;
 }
 
 h1 {
@@ -41,7 +40,7 @@ input[type="text"] {
     width: 30vw;
     margin: 3vw;
     border-radius: 5px;
-    font-size: 3vw;
+    font-size: 35px;
     cursor: pointer;
 }
 
