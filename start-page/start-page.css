@@ -17,7 +17,7 @@ main {
 
 h1 {
     color: #EAF205;
-    font-size: 80px;
+    font-size: 5vw;
 }
 
 .button-group, 
@@ -38,10 +38,10 @@ input[type="text"] {
     border: 1px white solid;
     font-weight: bold;
     padding: 15px;
-    width: 300px;
-    margin: 17px;
+    width: 30vw;
+    margin: 3vw;
     border-radius: 5px;
-    font-size: 35px;
+    font-size: 3vw;
     cursor: pointer;
 }
 
