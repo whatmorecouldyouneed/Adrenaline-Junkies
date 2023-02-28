@@ -12,4 +12,14 @@
     box-sizing: border-box;
     line-height: 55px;
   }
+
+  #cursor {
+    animation: blink .7s infinite;
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+  }
   
