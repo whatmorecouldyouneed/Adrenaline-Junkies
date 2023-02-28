@@ -16,24 +16,17 @@ function Sprinter(skill, color) {
   /**
    * draws the runner
    */
-  Sprinter.prototype.draw = function(lane, laneWidth) {
-
+ Sprinter.prototype.draw = function(lane, laneWidth) {
     var x = (lane * laneWidth) + (laneWidth / 2); // calculate x position
     var y = height - this.distance; // calculate y position
-
     fill(this.color);
     stroke(255);
     strokeWeight(2);
     ellipse(x, y, laneWidth / 2);
-
-    if (this.finished) {
+    if (this.finished && !this.timeLogged) {
         // draw the time
-
-        textSize(laneWidth / 2);
-        noStroke();
-        fill(255);
-        textAlign(RIGHT);
-        text((this.time / 1000).toFixed(2), width - laneWidth, y);
+        console.log(`Lane ${lane + 1}'s time: ${(this.time / 1000).toFixed(2)} seconds`);
+        this.timeLogged = true;
     }
 };
 
