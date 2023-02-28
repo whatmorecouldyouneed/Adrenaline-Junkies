@@ -1,6 +1,12 @@
+/* @font-face {
+    font-family: "8Bit-font";
+    src: url(/PressStart2P-Regular.ttf);
+} */
+
 body {
     margin: 0px;
     overflow: hidden;
+    /* font-family: "8Bit-font", sans-serif; */
 }
 
 main {
