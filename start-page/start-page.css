@@ -1,6 +1,12 @@
+@font-face {
+    font-family: "8Bit-font";
+    src: url(/PressStart2P-Regular.ttf);
+}
+
 body {
     margin: 0px;
     overflow: hidden;
+    font-family: "8Bit-font", sans-serif;
 }
 
 main {
@@ -16,11 +22,10 @@ main {
 
 h1 {
     color: #EAF205;
-    font-size: 5vw;
+    font-size: 80px;
 }
 
-.button-group, 
-form {
+.button-group, form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,11 +41,11 @@ input[type="text"] {
     all: unset;
     border: 1px white solid;
     font-weight: bold;
-    padding: 15px;
-    width: 30vw;
-    margin: 3vw;
+    padding: 25px !important;
+    width: 300px;
+    margin: 17px;
     border-radius: 5px;
-    font-size: 35px;
+    font-size: 28px !important;
     cursor: pointer;
 }
 
@@ -60,6 +65,10 @@ input[type="text"] {
     .btn {
         width: 200px;
         font-size: 25px;
+    }
+
+    .btn-text {
+        font-size: 20px;
     }
 }
 

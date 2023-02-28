@@ -9,13 +9,13 @@ const form = document.createElement('form'),
   submitBtn = document.createElement('button');
 
 // Player name
-export let playerName = '';
+let playerName = '';
 
 // When the start game button is clicked, do the following:
 startGameBtn.addEventListener('click', function() {
   // Set the type and placeholder text for the input field
   input.type = 'text';
-  input.placeholder = '_ENTER NAME';
+  input.placeholder = 'ENTER NAME';
 
   // Set the type and text for the submit button, and apply button styling
   submitBtn.type = 'submit';
@@ -29,4 +29,13 @@ startGameBtn.addEventListener('click', function() {
   // Replace the button group container with the form
   buttonGroup.parentNode.replaceChild(form, buttonGroup);
 });
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  playerName = input.value;
+  console.log(playerName);
+  window.location.href = "../lore-pages/lore.html";
+});
+
+module.exports = {playerName};
 
