@@ -14,7 +14,7 @@ function Sprinter(skill, color) {
   }
   
   /**
-   * draws the runner
+   * draws the runners
    */
  Sprinter.prototype.draw = function(lane, laneWidth) {
     var x = (lane * laneWidth) + (laneWidth / 2); // calculate x position
@@ -34,10 +34,11 @@ function Sprinter(skill, color) {
   
   
   /**
-   * handles distance based upon velocity,
+   * handles distance based upon velocity (adrenaline),
    * handles velocity based upon speed & resistance
    * handles finish, stops stopwatch
    */
+  
   Sprinter.prototype.update = function() {
   
     if (this.finished) {

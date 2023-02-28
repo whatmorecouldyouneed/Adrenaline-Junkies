@@ -15,7 +15,7 @@ export let playerName = '';
 startGameBtn.addEventListener('click', function() {
   // Set the type and placeholder text for the input field
   input.type = 'text';
-  input.placeholder = '_ENTER NAME';
+  input.placeholder = 'ENTER NAME';
 
   // Set the type and text for the submit button, and apply button styling
   submitBtn.type = 'submit';
