@@ -34,5 +34,7 @@ startGameBtn.addEventListener('click', function() {
 form.addEventListener('submit', e => {
   e.preventDefault();
   playerName = input.value;
+  localStorage.setItem("playerName", playerName);
   window.location.href = "./lore-pages/lore.html";
 });
+
