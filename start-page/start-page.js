@@ -9,7 +9,7 @@ const form = document.createElement('form'),
   submitBtn = document.createElement('button');
 
 // Player name
-export let playerName = '';
+let playerName = '';
 
 // When the start game button is clicked, do the following:
 startGameBtn.addEventListener('click', function() {
@@ -30,9 +30,12 @@ startGameBtn.addEventListener('click', function() {
   buttonGroup.parentNode.replaceChild(form, buttonGroup);
 });
 
-// Prevent the form from refreshing the page on submit
-form.addEventListener('submit', e => {
+form.addEventListener("submit", e => {
   e.preventDefault();
   playerName = input.value;
-  window.location.href = "./lore-pages/lore.html";
+  console.log(playerName);
+  window.location.href = "../lore-pages/lore.html";
 });
+
+module.exports = {playerName};
+
