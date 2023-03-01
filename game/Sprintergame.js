@@ -1,4 +1,4 @@
-const SPRINTER_COUNT = 7; // how many lanes there are, including the player
+const SPRINTER_COUNT = 8; // how many lanes there are, including the player
 
 var runners = []; // lineup
 var runner; // player
@@ -6,9 +6,13 @@ var runner; // player
 var laneWidth; // width of each lane
 
 var startTime; // beginning of the game
+var countdown; // countdown before the game starts
 
 function setup() {
   createCanvas(800, 600);
+  
+  /* initialize countdown */
+  countdown = 3;
 
   /* initialize opponents */
   var opponentColor = randomColor(); // color of opponents
@@ -22,22 +26,34 @@ function setup() {
   runners.splice(Math.floor(runners.length / 2), 0, runner);
 
   /* initialize stopwatch */
-  startTime = new Date().getTime();
   laneWidth = width / runners.length;
 }
 
 function draw() {
   background('#dd1111');
-
-  handleTrack();
-  stride();
+  
+  if (countdown > 0) {
+    textSize(100);
+    textAlign(CENTER, CENTER);
+    fill(255);
+    text(countdown, width/2, height/2);
+    
+    if (frameCount % 60 == 0) { // update every second
+      countdown--;
+    }
+  } else {
+    handleTrack();
+    stride();
+  }
 }
 
 /**
  * handle user input
  */
 function keyPressed() {
-  runner.run(keyCode);
+  if (countdown == 0) {
+    runner.run(keyCode);
+  }
 }
 
 /**
@@ -100,6 +116,5 @@ function invertColor(col) {
   var r = 255 - red(col);
   var g = 255 - green(col);
   var b = 255 - blue(col);
-
   return color(r, g, b);
 }

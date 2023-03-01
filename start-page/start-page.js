@@ -31,6 +31,8 @@ startGameBtn.addEventListener('click', function() {
 });
 
 // Prevent the form from refreshing the page on submit
+
+
 form.addEventListener('submit', e => {
   e.preventDefault();
   playerName = input.value;
