@@ -30,14 +30,13 @@ function Sprinter(skill, color) {
     }
 };
 
-  
-  
-  
   /**
    * handles distance based upon velocity (adrenaline),
    * handles velocity based upon speed & resistance
    * handles finish, stops stopwatch
    */
+
+  var startTime = new Date().getTime();
   
   Sprinter.prototype.update = function() {
   
