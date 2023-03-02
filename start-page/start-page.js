@@ -37,6 +37,6 @@ form.addEventListener('submit', e => {
   e.preventDefault();
   playerName = input.value;
   localStorage.setItem("playerName", playerName);
-  window.location.href = "/Adrenaline-Junkies/lore-pages/lore-one/lore-one.html";
+  window.location.href = "/lore-pages/lore-one/lore-one.html";
 });
 
