@@ -1,4 +1,4 @@
-const sentence = `${localStorage.getItem('playerName')} was a track runner from a small town with limited resources and no access to proper coaching. Despite the odds stacked against him, he refused to give up on his dream. He saved every penny he could, trained harder than ever, and now it is ${localStorage.getItem('playerName')}'s time to shine.`;      
+const sentence = `${localStorage.getItem('playerName')} was a track runner from a small town with limited resources and no access to proper coaching. Despite the odds stacked against ${localStorage.getItem('playerName')}, ${localStorage.getItem('playerName')} refused to give up on their dream. ${localStorage.getItem('playerName')} saved every penny they could, trained harder than ever, and now it is ${localStorage.getItem('playerName')}'s time to shine.`;      
 
 
 const sentenceElement = document.getElementById("sentence");
