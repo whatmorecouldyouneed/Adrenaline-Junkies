@@ -11,6 +11,7 @@
     padding: 20px;
     box-sizing: border-box;
     line-height: 42.5px;
+    padding: 10px;
   }
   #how-to {
     color: #EAF205;
@@ -27,8 +28,6 @@
 }
 
 .btn {
-    width: 150px;
-    margin: 20px;
     all: unset;
     border: 1px white solid;
     font-weight: bold;

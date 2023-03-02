@@ -22,4 +22,8 @@
       opacity: 0;
     }
   }
+
+#gameContainer {
+  border: 2px white solid !important;
+}
   
