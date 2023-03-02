@@ -60,3 +60,7 @@ img {
   font-size: 35px;
   cursor: pointer;
 }
+
+#gameContainer {
+  border: white 2px solid;
+}
