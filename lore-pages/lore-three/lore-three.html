@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adrenaline Junkies</title>
+    <link rel="stylesheet" href="lore-three.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #010326;
+      }
+      #gameContainer {
+        display: block;
+        width: 800px;
+        height: 600px;
+        margin: auto;
+        background-color: black;
+        border: 1px solid #000000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+    <style>
+      @font-face {
+        font-family: "Press_Start_2p";
+        src: url("PressStart2P-Regular.ttf");
+      }
+      story-text {
+        font-family: "Press_Start_2p", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="gameContainer">
+      <section id="story-text">
+        <!-- So close! [NAME] just couldn't quite cut it though. Better luck next time. -->
+        <div id="sentence-container">
+          <span id="sentence">This is a sentence.</span>
+          <span id="cursor"> </span>
+        </div>
+        <button type="button" class="btn" id="back-to-menu">BACK TO MENU</button>
+      </section>
+    </div>
+    <script src="lore-three.js"></script>
+  </body>
+</html>
