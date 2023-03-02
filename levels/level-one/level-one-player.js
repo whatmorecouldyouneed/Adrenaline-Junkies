@@ -15,20 +15,33 @@ function Sprinter(skill, color, aiFactor) {
   this.aiFactor = aiFactor; // factor to reduce AI runner speed
 }
 
+var scoresLevelOne = [];
+
 //draws the runners
 Sprinter.prototype.draw = function(lane, laneWidth) {
   var x = (lane * laneWidth) + (laneWidth / 2); // calculate x position
   var y = height - this.distance; // calculate y position
-  fill(this.color);
   stroke(255);
-  strokeWeight(2);
-  ellipse(x, y, laneWidth / 2);
+  strokeWeight(2)
+  // player = createSprite(x, y, 34, 41);
+  // drawSprites()
   if (this.finished && !this.timeLogged) {
     // draw the time
-    console.log(`Lane ${lane + 1}'s time: ${(this.time / 1000).toFixed(2)} seconds`);
+    scoresLevelOne.push(`Lane ${lane + 1}'s time: ${(this.time / 1000).toFixed(2)} seconds`);
+    console.log(scoresLevelOne);
     this.timeLogged = true;
   }
 };
+
+this.player_frames= [
+  {"name":"player_idle", "frame":{"x":34*0, "y": 0, 	"width": 34, "height": 41}},
+  {"name":"player_run01", "frame":{"x":34*1, "y": 0, 	"width": 34, "height": 41}},
+  {"name":"player_run02", "frame":{"x":34*2, "y": 0, 	"width": 34, "height": 41}},
+  {"name":"player_run03", "frame":{"x":34*3, "y": 0, 	"width": 34, "height": 41}},
+  {"name":"player_run04", "frame":{"x":34*4, "y": 0, 	"width": 34, "height": 41}},
+  {"name":"player_run05", "frame":{"x":34*5, "y": 0,  "width": 34, "height": 41}},
+  {"name":"player_trip", "frame":{"x":34*6, "y": 1,  "width": 34, "height": 41}}
+];
 
 
   /**
