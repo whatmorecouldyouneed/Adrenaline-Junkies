@@ -34,7 +34,7 @@ Sprinter.prototype.draw = function(lane, laneWidth) {
       if (/Lane 4/gi.test(scores[0])) {
         console.log("You are first!");
         setTimeout(() => {
-          window.location.href = "/Adrenaline-Junkies/lore-pages/lore-two/lore-two.html";
+          window.location.href = "/Adrenaline-Junkies/lore-pages/lore-four/lore-four.html";
         }, 3000)
       } else {
         console.log("You are NOT first");
