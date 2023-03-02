@@ -15,8 +15,6 @@ function Sprinter(skill, color, aiFactor) {
   this.aiFactor = aiFactor; // factor to reduce AI runner speed
 }
 
-var scoresLevelOne = [];
-
 //draws the runners
 Sprinter.prototype.draw = function(lane, laneWidth) {
   var x = (lane * laneWidth) + (laneWidth / 2); // calculate x position
@@ -27,11 +25,11 @@ Sprinter.prototype.draw = function(lane, laneWidth) {
   ellipse(x, y, laneWidth / 2);
   if (this.finished && !this.timeLogged) {
     // draw the time
-    scoresLevelOne.push(`Lane ${lane + 1}'s time: ${(this.time / 1000).toFixed(2)} seconds`);
-    console.log(scoresLevelOne);
+    console.log(`Lane ${lane + 1}'s time: ${(this.time / 1000).toFixed(2)} seconds`);
     this.timeLogged = true;
   }
 };
+
 
   /**
    * handles distance based upon velocity (adrenaline),
