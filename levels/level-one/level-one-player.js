@@ -71,9 +71,9 @@ Sprinter.prototype.draw = function(lane, laneWidth) {
     /* move the Sprinter */
     if (this.aiFactor && this.aiFactor > 0 && this.skill && this.skill < 1) {
         // reduce AI runner acceleration
-        this.velocity = (this.velocity > (3 * this.aiFactor)) ? (3 * this.aiFactor) : this.velocity; // constrain velocity
+        this.velocity = (this.velocity > (4 * this.aiFactor)) ? (4 * this.aiFactor) : this.velocity; // constrain velocity
     } else {
-        this.velocity = (this.velocity > 3) ? 3 : this.velocity; // constrain velocity
+        this.velocity = (this.velocity > 4) ? 4 : this.velocity; // constrain velocity
     }
 
     this.distance += this.velocity; // movement
