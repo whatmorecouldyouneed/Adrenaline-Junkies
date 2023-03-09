@@ -24,6 +24,6 @@ setInterval(() => {
 backToMenuBtn.style.display = "none";
 
 backToMenuBtn.addEventListener("click", () => {
-  window.location.href = "/start-page/index.html";
+  window.location.href = "/Adrenaline-Junkies/start-page/index.html";
 });
 
