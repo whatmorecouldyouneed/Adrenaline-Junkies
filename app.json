@@ -1,7 +1,12 @@
 {
   "expo": {
-    "name": "Adrenaline-Junkies",
-    "slug": "Adrenaline-Junkies",
+    "name": "Adrenaline Junkies",
+    "slug": "adrenaline-junkies",
+    "scheme": "adrenalinejunkies",
+    "assetBundlePatterns": ["**/*"],
+    "fonts": {
+    "PressStart2P-Regular": "assets/fonts/PressStart2P-Regular.ttf"
+  },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,13 +18,16 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.wmcyn.adrenalinejunkies"
+
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.wmcyn.adrenalinejunkies"
     },
     "web": {
       "favicon": "./assets/favicon.png"
