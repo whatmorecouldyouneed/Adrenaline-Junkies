@@ -1,60 +1,45 @@
+// screens/SignupScreen.tsx
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { pixel } from '../styles/pixelStyles';
 import { signup, login } from '../services/auth';
 import { useNavigation } from '@react-navigation/native';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { RootStackParamList } from '../../types/navigation';
+
+type SignupScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Signup'>;
 
 export default function SignupScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const nav = useNavigation();
+  const navigation = useNavigation<SignupScreenNavigationProp>();
 
   const handleSignup = async () => {
+    if (!email || !password) return Alert.alert("Error", "All fields required.");
     try {
       await signup(email, password);
-      // Automatically log in after successful signup
       await login(email, password);
       Alert.alert('Signup Successful');
-      nav.navigate('CharacterCreator' as never);
+      navigation.replace('CharacterCreator');
     } catch (err: any) {
       Alert.alert('Signup Error', err.message);
     }
   };
 
-  const handleStartWithoutAccount = () => {
-    nav.navigate('CharacterCreator' as never);
-  };
-
   return (
     <View style={pixel.container}>
-      <Text style={pixel.title}>CREATE ACCOUNT</Text>
+      <Text style={pixel.title}>create account</Text>
 
-      <TextInput
-        placeholder="email"
-        placeholderTextColor="#888"
-        style={pixel.input}
-        autoCapitalize="none"
-        onChangeText={setEmail}
-      />
-
-      <TextInput
-        placeholder="password"
-        placeholderTextColor="#888"
-        style={pixel.input}
-        secureTextEntry
-        autoCapitalize="none"
-        onChangeText={setPassword}
-      />
+      <TextInput placeholder="email" style={pixel.input} autoCapitalize="none"
+        value={email} onChangeText={setEmail} placeholderTextColor="#888"/>
+      <TextInput placeholder="password" style={pixel.input} secureTextEntry autoCapitalize="none"
+        value={password} onChangeText={setPassword} placeholderTextColor="#888"/>
 
       <TouchableOpacity style={pixel.button} onPress={handleSignup}>
         <Text style={pixel.buttonText}>sign up</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={pixel.startWithoutAccount} onPress={handleStartWithoutAccount}>
-        <Text style={pixel.buttonText}>start without account</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={pixel.subtleButton} onPress={() => nav.goBack()}>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
         <Text style={pixel.subtleText}>← back to login</Text>
       </TouchableOpacity>
     </View>
