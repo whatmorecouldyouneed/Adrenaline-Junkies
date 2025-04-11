@@ -10,8 +10,8 @@ import { LEVELS } from '../constants/levels'; // Adjust path if needed
 import * as Animatable from 'react-native-animatable';
 // --- END ADD IMPORT ---
 // Import navigation types if needed
-// import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-// import type { RootStackParamList } from '../App'; // Adjust path if needed
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import type { RootStackParamList } from '../App'; // Adjust path if needed
 
 export default function LoreScreen({ route }: any) {
   // Ensure route and route.params exist before destructuring

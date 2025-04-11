@@ -141,9 +141,9 @@ export default function CharacterCreator() {
       </TouchableOpacity>
 
        {/* Optional Back Button */}
-       {/* <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+       <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
            <Text style={pixel.secondaryButtonText}>back</Text>
-       </TouchableOpacity> */}
+       </TouchableOpacity>
     </View>
   );
 }
