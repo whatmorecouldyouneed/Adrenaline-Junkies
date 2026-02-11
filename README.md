@@ -48,6 +48,9 @@ yarn install
 ## setup environment variables:
 - create a `.env` file in the root
 - ask @jared for the keys or refer to `.env.example`
+- set `EXPO_PUBLIC_COLYSEUS_URL` for multiplayer:
+  - simulator/local: `http://localhost:2567`
+  - physical phone on same network: `http://YOUR_MAC_IP:2567`
 
 run the app locally:
 ```bash

@@ -30,7 +30,6 @@ const MOCK_RACE_RESULTS: ResultItem[] = [
 
 export default function ResultsScreen() {
   const navigation = useNavigation<ResultsScreenNavigationProp>();
-  const [playerName, setPlayerName] = useState('Player');
   const [processedResults, setProcessedResults] = useState<ResultItem[]>([]);
   const [animationsDone, setAnimationsDone] = useState(false);
 
@@ -39,7 +38,6 @@ export default function ResultsScreen() {
       // Use the potentially updated getPlayerName function
       const name = await getPlayerName();
       const finalName = name || 'You';
-      setPlayerName(finalName);
 
       const updatedResults = MOCK_RACE_RESULTS.map(result =>
         result.isPlayer ? { ...result, name: finalName } : result
@@ -67,7 +65,9 @@ export default function ResultsScreen() {
      );
   };
 
-  const handleContinue = () => { /* ... no change ... */ };
+  const handleContinue = () => {
+    navigation.replace('MainMenu');
+  };
 
  
   return (

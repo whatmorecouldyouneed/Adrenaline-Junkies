@@ -50,6 +50,12 @@ export default function ChoiceScreen() {
           <Text style={[pixel.buttonText, styles.guestButtonText]}>play as guest</Text>
         </TouchableOpacity>
       </Animatable.View>
+
+      <Animatable.View animation="fadeInUp" duration={600} delay={400} style={styles.buttonWrapper}>
+        <TouchableOpacity style={[pixel.button, styles.testButton]} onPress={() => navigation.navigate('Game', {})}>
+          <Text style={[pixel.buttonText, styles.testButtonText]}>test race (3d)</Text>
+        </TouchableOpacity>
+      </Animatable.View>
     </View>
   );
 }
@@ -67,5 +73,15 @@ const styles = StyleSheet.create({
   },
   guestButtonText: {
     color: pixel.buttonText.color,
+  },
+  testButton: {
+    backgroundColor: 'transparent',
+    borderColor: '#00d4ff',
+    borderWidth: 1,
+    marginTop: 12,
+  },
+  testButtonText: {
+    color: '#00d4ff',
+    fontSize: 12,
   },
 });

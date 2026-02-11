@@ -1,3 +1,10 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Buffer } from 'buffer';
+if (typeof (global as any).localStorage === 'undefined') {
+  (global as any).localStorage = AsyncStorage;
+}
+(global as any).Buffer = Buffer;
+
 import { registerRootComponent } from 'expo';
 
 import App from './src/App';

@@ -1,5 +1,3 @@
-import { getPlayerHometown } from "../utils/playerStorage"; // Import if needed directly here, or pass hometown value
-
 // Define the type for a lore level entry
 export type LoreLevel = {
   id: string;
@@ -14,12 +12,12 @@ export const LEVELS: LoreLevel[] = [
     id: 'intro',
     // Updated signature to accept hometown, provide default if empty
     lore: (name, hometown) => `In the quiet streets of ${hometown}, ${name} discovered a gift: speed. With worn-out shoes and an unyielding spirit, ${name} trained relentlessly, dreaming of the roar of the stadium crowd. Limited resources were just another hurdle to overcome on the path to glory...`,
-    nextScreen: 'CharacterCreator', // Or maybe 'FirstRacePrep'
+    nextScreen: 'Lobby', // start race flow after intro
   },
   {
     id: 'first_race_prep',
     lore: (name) => `The day of the first qualifying round dawns. The air buzzes with nervous energy. ${name} takes a deep breath, remembering the endless miles run on dusty tracks back home. This is the first step. Focus is key.`,
-    nextScreen: 'LevelOne', // Assume LevelOne is the first race screen
+    nextScreen: 'Lobby', // multiplayer lobby, then first race
   },
   {
     id: 'won_round_1',

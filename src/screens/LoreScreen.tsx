@@ -11,14 +11,14 @@ import * as Animatable from 'react-native-animatable';
 // --- END ADD IMPORT ---
 // Import navigation types if needed
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import type { RootStackParamList } from '../App'; // Adjust path if needed
+import type { RootStackParamList } from '../../types/navigation';
 
 export default function LoreScreen({ route }: any) {
   // Ensure route and route.params exist before destructuring
   const loreId = route?.params?.loreId;
   const [text, setText] = useState('');
   const [done, setDone] = useState(false);
-  const nav = useNavigation(); // Add typing if needed: useNavigation<NativeStackNavigationProp<RootStackParamList>>()
+  const nav = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   useEffect(() => {
     if (!loreId) {

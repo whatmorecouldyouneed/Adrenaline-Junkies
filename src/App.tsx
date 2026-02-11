@@ -1,6 +1,7 @@
 // App.js
 import React, { useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { NavigationContainer } from '@react-navigation/native';
@@ -16,8 +17,21 @@ import SignupScreen from './screens/SignupScreen';
 import CharacterCreator from './screens/CharacterCreator';
 import LoreScreen from './screens/LoreScreen';
 import ResultsScreen from './screens/ResultsScreen';
-// MainMenu placeholder
-const MainMenuScreen = ({ navigation }: any) => ( <View style={styles.placeholderContainer}><Text style={styles.placeholderText}>Main Menu</Text><TouchableOpacity onPress={() => navigation.replace('Choice')} style={{marginTop: 20}}><Text style={styles.placeholderButtonText}>Logout (Go to Choice)</Text></TouchableOpacity></View> );
+import GameScreen from './screens/GameScreen';
+import LobbyScreen from './screens/LobbyScreen';
+import { RaceRoomProvider } from './contexts/RaceRoomContext';
+// MainMenu placeholder - test race for milestone 1
+const MainMenuScreen = ({ navigation }: any) => (
+  <View style={styles.placeholderContainer}>
+    <Text style={styles.placeholderText}>Main Menu</Text>
+    <TouchableOpacity onPress={() => navigation.navigate('Game', {})} style={{ marginTop: 20 }}>
+      <Text style={styles.placeholderButtonText}>Test Race</Text>
+    </TouchableOpacity>
+    <TouchableOpacity onPress={() => navigation.replace('Choice')} style={{ marginTop: 10 }}>
+      <Text style={styles.placeholderButtonText}>Logout (Go to Choice)</Text>
+    </TouchableOpacity>
+  </View>
+);
 
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -30,6 +44,8 @@ export default function App() {
    if (!fontsLoaded && !fontError) { return null; }
 
   return (
+    <GestureHandlerRootView style={{ flex: 1 }}>
+    <RaceRoomProvider>
     <NavigationContainer>
       <Stack.Navigator
         initialRouteName="Choice"
@@ -45,10 +61,14 @@ export default function App() {
         <Stack.Screen name="CharacterCreator" component={CharacterCreator} />
         <Stack.Screen name="Lore" component={LoreScreen} />
         <Stack.Screen name="Results" component={ResultsScreen} />
+        <Stack.Screen name="Game" component={GameScreen} />
+        <Stack.Screen name="Lobby" component={LobbyScreen} />
         <Stack.Screen name="MainMenu" component={MainMenuScreen} />
         {/* Ensure no stray text or characters are here */}
       </Stack.Navigator>
     </NavigationContainer>
+    </RaceRoomProvider>
+    </GestureHandlerRootView>
   );
 }
 

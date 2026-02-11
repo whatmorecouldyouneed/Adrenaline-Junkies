@@ -1,3 +1,8 @@
+declare module '*.fbx' {
+  const value: number;
+  export default value;
+}
+
 declare module '@env' {
     export const FIREBASE_API_KEY: string;
     export const FIREBASE_AUTH_DOMAIN: string;

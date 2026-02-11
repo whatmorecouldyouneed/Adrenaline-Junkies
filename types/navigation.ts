@@ -10,9 +10,10 @@ export type RootStackParamList = {
     Signup: undefined;
     CharacterCreator: undefined;
     Lore: { loreId: string };
-    Game: undefined; // Kept from previous examples, remove if not used
+    Game: { roomId?: string };
     Results: undefined;
     MainMenu: undefined;
+    Lobby: undefined;
     // Add other screen names and their params here
   };
   
